@@ -11,7 +11,7 @@ namespace ntl::impl {
     template<class T, bool minusCounted = false>
     struct NumberDigitConvTraits : public Traits {
         static_assert(std::is_integral_v<T>, "Invalid forwarded type!");
-        static_assert(std::conditional_t<std::is_unsigned_v<T> && minusCounted, std::false_type, std::true_type>::value, "Invalid template argumends");
+        static_assert(!(std::is_unsigned_v<T> && minusCounted), "Invalid template argumends");
     public:
         using SizeType = std::size_t;
         using BaseType = std::uint8_t;
