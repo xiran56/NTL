@@ -8,54 +8,31 @@
 #include <type_traits>
 
 namespace ntl::impl {
-    using SizeType = std::size_t;
-    using BaseType = std::uint8_t;
+    template<class T, bool minusCounted = false>
+    struct NumberDigitConvTraits : public Traits {
+        static_assert(std::is_integral_v<T>, "Invalid forwarded type!");
+        static_assert(std::conditional_t<std::is_unsigned_v<T> && minusCounted, std::false_type, std::true_type>::value, "Invalid template argumends");
+    public:
+        using SizeType = std::size_t;
+        using BaseType = std::uint8_t;
 
-    template<class T, class = void>
-    struct NumberDigitConvTraits {
-        static_assert(alwaysFalse<T>, "Invalid forwarded type!");
-    };
-
-    template<class Unsigned>
-    struct NumberDigitConvTraits<Unsigned, std::enable_if_t<
-            std::is_unsigned_v<Unsigned>
-        >
-    > {
-        static SizeType countDigits(Unsigned n, BaseType base) {
+        static SizeType countDigits(T n, BaseType base) {
             SizeType result { 0 };
+
+            if constexpr (minusCounted)
+                if (result < 0)
+                    result++;
 
             do {
                 n /= base;
 
                 result++;
-            } while (n != Unsigned { 0 });
-
-            return result;
+            } while (n != T { 0 });
         }
+    
+        template<class View>
+        inline static auto getDigit(T n, SizeType index) {
 
-        inline static Unsigned getDigit(Unsigned n, SizeType index, BaseType base) {
-            return (n / std::pow(base, n)) % base;
-        }
-    };
-
-    template<class Signed>
-    struct NumberDigitConvTraits<Signed, std::enable_if_t<
-            std::is_signed_v<Signed>
-        >
-    > {
-        static SizeType countDigits(Signed n, BaseType base, bool minusCounted) {
-            SizeType result { 0 };
-
-            if (minusCounted && n < 0)
-                result++;
-
-            do {
-                n /= base;
-
-                result++;
-            } while (n != Signed { 0 });
-
-            return result;
         }
     };
 }
