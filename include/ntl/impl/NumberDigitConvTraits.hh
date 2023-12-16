@@ -29,6 +29,8 @@ namespace ntl::impl::traits {
 
                 result++;
             } while (n != T { 0 });
+
+            return result;
         }
     
         template<class View>
