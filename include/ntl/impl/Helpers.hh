@@ -1,12 +1,19 @@
 #pragma once
 
-namespace ntl::impl {
-    template<class>
-    inline constexpr bool alwaysFalse { false };
+#include <type_traits>
 
-    class Traits {
-    public:
-        Traits() = delete;
-        ~Traits() = delete;
-    };
+namespace ntl {
+    template<class>
+    struct AlwaysFalse : std::false_type {};
+
+    template<class T, T>
+    struct AlwaysFalseValue : std::false_type {};
+
+    namespace impl {
+        class Traits {
+        public:
+            Traits() = delete;
+            ~Traits() = delete;
+        };
+    }
 }

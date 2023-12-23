@@ -17,7 +17,7 @@ namespace ntl::impl::traits {
         using BaseType = std::uint8_t;
         using DigitType = std::uint8_t;
 
-        static SizeType countDigits(T n, BaseType base) {
+        static constexpr SizeType countDigits(T n, BaseType base) {
             SizeType result { 0 };
 
             if constexpr (minusCounted)
@@ -34,17 +34,21 @@ namespace ntl::impl::traits {
         }
     
         template<class View>
-        inline static View getDigit(T n, SizeType index, BaseType base) {
+        static constexpr View getDigit(T n, SizeType index, BaseType base) {
             if constexpr (minusCounted && std::is_same_v<View, char>)
                 if (n < 0 && index == 1)
                     return '-';
 
-            const DigitType intView = (n / std::pow(base, index)) % base;
+            do { 
+                n /= base;
+
+                index--;
+            } while (index > 0);
 
             if constexpr (std::is_integral_v<View>)
-                return intView;
+                return n % base;
             else if constexpr (std::is_same_v<View, char>)
-                return intView + '0';
+                return "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"[n % base];
             else
                 static_assert(alwaysFalse<View>, "Unsupported view!");
         }
