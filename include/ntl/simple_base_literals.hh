@@ -2,7 +2,7 @@
 
 #include "impl/chars2num.hh"
 
-namespace ntl::impl {
+namespace ntl::literals {
 	template<char... Chars>  
 	inline constexpr int operator ""_2() { return ::ntl::impl::chars2num<int, 2, Chars...>; }
  
@@ -108,4 +108,3 @@ namespace ntl::impl {
 	template<char... Chars>
 	inline constexpr int operator ""_36() { return ::ntl::impl::chars2num<int, 36, Chars...>; }
 }
-

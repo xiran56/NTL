@@ -1,11 +1,8 @@
 #pragma once
 
-#include "impl/chars2num.hh"
+#include "simple_base_literals.hh"
 
-namespace ntl {
-template<char... Chars>
-	inline constexpr int operator ""_2() { return ::ntl::impl::chars2num<int, 2, Chars...>; }
-
+namespace ntl::literals {
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_2i8() { return ::ntl::impl::chars2num<std::int8_t, 2, Chars...>; }
 
@@ -35,9 +32,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_2z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 2, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_3() { return ::ntl::impl::chars2num<int, 3, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_3i8() { return ::ntl::impl::chars2num<std::int8_t, 3, Chars...>; }
@@ -70,9 +64,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_3z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 3, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_4() { return ::ntl::impl::chars2num<int, 4, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_4i8() { return ::ntl::impl::chars2num<std::int8_t, 4, Chars...>; }
 
 	template<char... Chars>
@@ -101,9 +92,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_4z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 4, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_5() { return ::ntl::impl::chars2num<int, 5, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_5i8() { return ::ntl::impl::chars2num<std::int8_t, 5, Chars...>; }
@@ -136,9 +124,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_5z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 5, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_6() { return ::ntl::impl::chars2num<int, 6, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_6i8() { return ::ntl::impl::chars2num<std::int8_t, 6, Chars...>; }
 
 	template<char... Chars>
@@ -167,9 +152,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_6z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 6, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_7() { return ::ntl::impl::chars2num<int, 7, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_7i8() { return ::ntl::impl::chars2num<std::int8_t, 7, Chars...>; }
@@ -202,9 +184,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_7z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 7, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_8() { return ::ntl::impl::chars2num<int, 8, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_8i8() { return ::ntl::impl::chars2num<std::int8_t, 8, Chars...>; }
 
 	template<char... Chars>
@@ -233,9 +212,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_8z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 8, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_9() { return ::ntl::impl::chars2num<int, 9, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_9i8() { return ::ntl::impl::chars2num<std::int8_t, 9, Chars...>; }
@@ -268,9 +244,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_9z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 9, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_10() { return ::ntl::impl::chars2num<int, 10, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_10i8() { return ::ntl::impl::chars2num<std::int8_t, 10, Chars...>; }
 
 	template<char... Chars>
@@ -299,9 +272,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_10z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 10, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_11() { return ::ntl::impl::chars2num<int, 11, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_11i8() { return ::ntl::impl::chars2num<std::int8_t, 11, Chars...>; }
@@ -334,9 +304,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_11z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 11, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_12() { return ::ntl::impl::chars2num<int, 12, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_12i8() { return ::ntl::impl::chars2num<std::int8_t, 12, Chars...>; }
 
 	template<char... Chars>
@@ -365,9 +332,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_12z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 12, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_13() { return ::ntl::impl::chars2num<int, 13, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_13i8() { return ::ntl::impl::chars2num<std::int8_t, 13, Chars...>; }
@@ -400,9 +364,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_13z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 13, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_14() { return ::ntl::impl::chars2num<int, 14, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_14i8() { return ::ntl::impl::chars2num<std::int8_t, 14, Chars...>; }
 
 	template<char... Chars>
@@ -431,9 +392,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_14z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 14, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_15() { return ::ntl::impl::chars2num<int, 15, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_15i8() { return ::ntl::impl::chars2num<std::int8_t, 15, Chars...>; }
@@ -466,9 +424,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_15z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 15, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_16() { return ::ntl::impl::chars2num<int, 16, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_16i8() { return ::ntl::impl::chars2num<std::int8_t, 16, Chars...>; }
 
 	template<char... Chars>
@@ -497,9 +452,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_16z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 16, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_17() { return ::ntl::impl::chars2num<int, 17, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_17i8() { return ::ntl::impl::chars2num<std::int8_t, 17, Chars...>; }
@@ -532,9 +484,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_17z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 17, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_18() { return ::ntl::impl::chars2num<int, 18, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_18i8() { return ::ntl::impl::chars2num<std::int8_t, 18, Chars...>; }
 
 	template<char... Chars>
@@ -563,9 +512,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_18z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 18, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_19() { return ::ntl::impl::chars2num<int, 19, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_19i8() { return ::ntl::impl::chars2num<std::int8_t, 19, Chars...>; }
@@ -598,9 +544,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_19z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 19, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_20() { return ::ntl::impl::chars2num<int, 20, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_20i8() { return ::ntl::impl::chars2num<std::int8_t, 20, Chars...>; }
 
 	template<char... Chars>
@@ -629,9 +572,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_20z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 20, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_21() { return ::ntl::impl::chars2num<int, 21, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_21i8() { return ::ntl::impl::chars2num<std::int8_t, 21, Chars...>; }
@@ -664,9 +604,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_21z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 21, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_22() { return ::ntl::impl::chars2num<int, 22, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_22i8() { return ::ntl::impl::chars2num<std::int8_t, 22, Chars...>; }
 
 	template<char... Chars>
@@ -695,9 +632,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_22z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 22, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_23() { return ::ntl::impl::chars2num<int, 23, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_23i8() { return ::ntl::impl::chars2num<std::int8_t, 23, Chars...>; }
@@ -730,9 +664,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_23z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 23, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_24() { return ::ntl::impl::chars2num<int, 24, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_24i8() { return ::ntl::impl::chars2num<std::int8_t, 24, Chars...>; }
 
 	template<char... Chars>
@@ -761,9 +692,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_24z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 24, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_25() { return ::ntl::impl::chars2num<int, 25, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_25i8() { return ::ntl::impl::chars2num<std::int8_t, 25, Chars...>; }
@@ -796,9 +724,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_25z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 25, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_26() { return ::ntl::impl::chars2num<int, 26, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_26i8() { return ::ntl::impl::chars2num<std::int8_t, 26, Chars...>; }
 
 	template<char... Chars>
@@ -827,9 +752,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_26z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 26, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_27() { return ::ntl::impl::chars2num<int, 27, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_27i8() { return ::ntl::impl::chars2num<std::int8_t, 27, Chars...>; }
@@ -862,9 +784,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_27z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 27, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_28() { return ::ntl::impl::chars2num<int, 28, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_28i8() { return ::ntl::impl::chars2num<std::int8_t, 28, Chars...>; }
 
 	template<char... Chars>
@@ -893,9 +812,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_28z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 28, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_29() { return ::ntl::impl::chars2num<int, 29, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_29i8() { return ::ntl::impl::chars2num<std::int8_t, 29, Chars...>; }
@@ -928,9 +844,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_29z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 29, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_30() { return ::ntl::impl::chars2num<int, 30, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_30i8() { return ::ntl::impl::chars2num<std::int8_t, 30, Chars...>; }
 
 	template<char... Chars>
@@ -959,9 +872,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_30z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 30, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_31() { return ::ntl::impl::chars2num<int, 31, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_31i8() { return ::ntl::impl::chars2num<std::int8_t, 31, Chars...>; }
@@ -994,9 +904,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_31z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 31, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_32() { return ::ntl::impl::chars2num<int, 32, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_32i8() { return ::ntl::impl::chars2num<std::int8_t, 32, Chars...>; }
 
 	template<char... Chars>
@@ -1025,9 +932,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_32z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 32, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_33() { return ::ntl::impl::chars2num<int, 33, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_33i8() { return ::ntl::impl::chars2num<std::int8_t, 33, Chars...>; }
@@ -1060,9 +964,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_33z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 33, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_34() { return ::ntl::impl::chars2num<int, 34, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_34i8() { return ::ntl::impl::chars2num<std::int8_t, 34, Chars...>; }
 
 	template<char... Chars>
@@ -1093,9 +994,6 @@ template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_34z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 34, Chars...>; }
 
 	template<char... Chars>
-	inline constexpr int operator ""_35() { return ::ntl::impl::chars2num<int, 35, Chars...>; }
-
-	template<char... Chars>
 	inline constexpr std::int8_t operator ""_35i8() { return ::ntl::impl::chars2num<std::int8_t, 35, Chars...>; }
 
 	template<char... Chars>
@@ -1124,9 +1022,6 @@ template<char... Chars>
 
 	template<char... Chars>
 	inline constexpr std::ptrdiff_t operator ""_35z() { return ::ntl::impl::chars2num<std::ptrdiff_t, 35, Chars...>; }
-
-	template<char... Chars>
-	inline constexpr int operator ""_36() { return ::ntl::impl::chars2num<int, 36, Chars...>; }
 
 	template<char... Chars>
 	inline constexpr std::int8_t operator ""_36i8() { return ::ntl::impl::chars2num<std::int8_t, 36, Chars...>; }

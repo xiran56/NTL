@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 
-#include "ntl/impl/NumberDigitConvTraits.hh"
+#include "ntl/simple_base_literals.hh"
 
-namespace traits = ntl::impl::traits;
+TEST(NtlTests, literalTest) {
+    using ntl::impl::operator""_4;
 
-TEST(NtlTests, hexTest) {
-    EXPECT_EQ(traits::NumberDigitConvTraits<int>::getDigit<char>(0xC, 0, 16), 'C');
+    EXPECT_EQ(123_4, 27);
 }
