@@ -1,7 +1,6 @@
 name: Code analysis 
 
-on: ["push"]
-on: workflow_dispatch
+on: ["push", "workflow_dispatch"]
 
 jobs:
   codacy-analysis-cli:
