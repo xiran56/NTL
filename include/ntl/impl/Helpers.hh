@@ -2,18 +2,16 @@
 
 #include <type_traits>
 
-namespace ntl {
+namespace ntl::impl {
     template<class>
-    struct AlwaysFalse : std::false_type {};
+    inline constexpr bool typeError { false };
 
-    template<class T, T>
-    struct AlwaysFalseValue : std::false_type {};
+    template<auto>
+    inline constexpr bool valueError { false };
 
-    namespace impl {
-        class Traits {
-        public:
-            Traits() = delete;
-            ~Traits() = delete;
-        };
-    }
+    class traits {
+    public:
+        traits() = delete;
+        ~traits() = delete;
+    };
 }
