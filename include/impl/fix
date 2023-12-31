@@ -1,0 +1,22 @@
+namespace util {
+    template<std::size_t N>
+    using c_str = char const [N];
+
+    template<auto const & str, std::size_t iter = std::size(str), char const ... chars>
+    struct c_str_to_arg_pack {
+        using arg_pack_t = 
+            typename c_str_to_arg_pack<str, iter-1, str[iter-1], chars ... >
+                ::arg_pack_t;
+    };
+
+    template<auto const & str, char const ... chars>
+    struct c_str_to_arg_pack<str, 0, chars ...> {
+        using arg_pack_t = c_str_to_arg_pack<str, 0, chars...>;
+
+        template <template <char ...> typename T>
+        using apply = T<chars ...>;
+    };
+    template<auto const & str, char const ... chars>
+    using c_str_to_arg_pack_t = typename c_str_to_arg_pack<str, chars ... >::arg_pack_t;
+
+}
